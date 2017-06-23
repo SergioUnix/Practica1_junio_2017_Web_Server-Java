@@ -92,7 +92,7 @@
       </form>
   </div>
   <div class="clear"></div>
-  <div id="footer"> &copy; Your Company Name | <a href="sitemap.html">Site Map</a><br />
+  <div id="footer"> &copy; Your CompaName | <a href="sitemap.html">Site Map</a><br />
     <!-- This template is provided free of charge as long as you keep the link to http://webdevelopmentquote.com -->
     <a href="http://webdevelopmentquote.com/" target="_blank" style="text-decoration:none;">Web Development</a> by WebDevelopmentQuote.com</div>
 </div>
