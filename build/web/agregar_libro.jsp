@@ -35,7 +35,7 @@
   </div>
   <div id="navbarAlt">
     <ul>
-      <li><a href="contact.html">Email Contact Form</a></li>
+      <li><a href="contact.html">Email </a></li>
     </ul>
   </div>
 </div>
