@@ -1,12 +1,11 @@
 <%-- 
-    Document   : index
-    Created on : 22/06/2017, 05:05:27 PM
+    Document   : agregar_autor
+    Created on : 22/06/2017, 10:15:47 PM
     Author     : Ariel
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>  
-            
+<!DOCTYPE html>
 <html>
     <head>
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,18 +23,18 @@
 <div id="leftMain"> <a href="index.jsp"><img src="images/logo.gif" alt="School Website" border="0" /></a>
   <div id="navbar">
     <ul>
-    <li><a href="index.jsp">Inicio</a></li>
+       <li><a href="index.jsp">Inicio</a></li>
       <li><a href="agregar_libro.jsp">Agregar libro</a></li> 
       <li><a href="consulta_libro.jsp">Consulta Libro</a></li>
       <li><a href="agregar_autor.jsp">Agregar Autor</a></li>
-      <li><a href="pretamo.jsp">Realizar Un Prestamo</a></li>
+       <li><a href="pretamo.jsp">Realizar Un Prestamo</a></li>
        <li><a href="agregar_estudiante.jsp">Agregar Estudiante</a></li>
       <li><a href="directions.html">Directions</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </div>
   <div id="navbarAlt">
-  
+   
   </div>
 </div>
 <div id="main">
@@ -50,15 +49,57 @@
 </p>
  
 <form id="form1" name="form1" method="post" action="">
+        <label>Nombre:<br />
+        <input type="text" name="nombre" value=""  id="name" />
         
+        </label>
         <p>
-         Bienvenido
+          <label>Tipo Autor:<br />
+                <select  name="cod_tipo_autor">
+            <option>Original</option>
+            <option>Anónimo</option>
+        </select>
+        
+        </label>
+        </p>
+     
+        <p>
+            
+          <input type="submit" name="grabar" value="Agregar" />
+          
         </p>
       </form>
   </div>
   
   
- 
+     <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	practica.WebServicePractica1_Service service = new practica.WebServicePractica1_Service();
+	practica.WebServicePractica1 port = service.getWebServicePractica1Port();
+	 // TODO initialize WS operation arguments here
+	java.lang.String nombre = request.getParameter("nombre");
+        int codTipoAutor;
+      
+        if(request.getParameter("cod_tipo_autor").equals("Original")){
+	codTipoAutor = 1;
+    }else 
+    {codTipoAutor = 2;}
+	
+// TODO process result here
+	java.lang.String result = port.agregarAutor(nombre, codTipoAutor);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
+
+  
+  
+  
 
 </body>
+
 </html>

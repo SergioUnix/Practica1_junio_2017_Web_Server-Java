@@ -1,6 +1,6 @@
 <%-- 
-    Document   : agregar_libro
-    Created on : 22/06/2017, 07:59:31 PM
+    Document   : agregar_estudiante
+    Created on : 22/06/2017, 11:12:13 PM
     Author     : Ariel
 --%>
 
@@ -23,7 +23,7 @@
 <div id="leftMain"> <a href="index.jsp"><img src="images/logo.gif" alt="School Website" border="0" /></a>
   <div id="navbar">
     <ul>
-    <li><a href="index.jsp">Inicio</a></li>
+       <li><a href="index.jsp">Inicio</a></li>
       <li><a href="agregar_libro.jsp">Agregar libro</a></li> 
       <li><a href="consulta_libro.jsp">Consulta Libro</a></li>
       <li><a href="agregar_autor.jsp">Agregar Autor</a></li>
@@ -34,7 +34,7 @@
     </ul>
   </div>
   <div id="navbarAlt">
- 
+
   </div>
 </div>
 <div id="main">
@@ -53,37 +53,25 @@
         <input type="text" name="nombre" value=""  id="name" />
         
         </label>
-        <p>
-          <label>Numero de ejemplar:<br />
-        <input type="text" name="no_ejemplar" value="" id="email" />
+     <p>
+          <label>Dpi:<br />
+        <input type="text" name="Dpi" value="" id="email" />
         
         </label>
         </p>
         <p>
-          <label>Paginas:<br />
-        <input type="text" name="paginas" value="" />
+          <label>Direccion:<br />
+        <input type="text" name="direccion" value="" id="email" />
         
         </label>
         </p>
-    <p>
-          <label>Tema:<br />
-        <input type="text" name="tema" value="" />
+        <p>
+          <label>Telefono:<br />
+        <input type="text" name="telefono" value="" />
         
         </label>
         </p>
-    <p>
-          <label>Código Autor:<br />
-        <input type="text" name="cod_autor" value="" />
-        
-        </label>
-        </p>
-    <p>
-          <label>Código Estado:<br />
-        <input type="text" name="cod_estado" value="" />
-        
-        </label>
-        </p>
-    
+   
         <p>
             
           <input type="submit" name="grabar" value="Agregar" />
@@ -92,23 +80,20 @@
       </form>
   </div>
   
+  
       <%-- start web service invocation --%><hr/>
     <%
     try {
 	practica.WebServicePractica1_Service service = new practica.WebServicePractica1_Service();
 	practica.WebServicePractica1 port = service.getWebServicePractica1Port();
 	 // TODO initialize WS operation arguments here
+	int dpi = Integer.parseInt(request.getParameter("Dpi"));
 	java.lang.String nombre = request.getParameter("nombre");
-	int noEjemplar = Integer.valueOf(request.getParameter("no_ejemplar"));
-	int paginas = Integer.valueOf(request.getParameter("paginas"));
-	java.lang.String tema = request.getParameter("tema");
-	int codAutor = Integer.parseInt(request.getParameter("cod_autor"));
-	int codEstado = Integer.parseInt(request.getParameter("cod_estado"));
-        
+	java.lang.String direccion = request.getParameter("direccion");
+	int telefono = Integer.parseInt(request.getParameter("telefono"));
 	// TODO process result here
-	java.lang.String result = port.agregarLibro(nombre, noEjemplar, paginas, tema, codAutor, codEstado);
-	
-        out.println("Result = "+result);
+	java.lang.String result = port.agregarEstudiante(dpi, nombre, direccion, telefono);
+	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
@@ -117,8 +102,8 @@
 
   
   
-  
 
 </body>
 
 </html>
+

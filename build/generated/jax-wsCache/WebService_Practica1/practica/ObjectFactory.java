@@ -24,10 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _HelloResponse_QNAME = new QName("http://Practica/", "helloResponse");
-    private final static QName _Suma_QNAME = new QName("http://Practica/", "suma");
-    private final static QName _SumaResponse_QNAME = new QName("http://Practica/", "sumaResponse");
-    private final static QName _Hello_QNAME = new QName("http://Practica/", "hello");
+    private final static QName _AgregarLibro_QNAME = new QName("http://Practica/", "agregar_libro");
+    private final static QName _AgregarEstudiante_QNAME = new QName("http://Practica/", "agregar_estudiante");
+    private final static QName _AgregarLibroResponse_QNAME = new QName("http://Practica/", "agregar_libroResponse");
+    private final static QName _AgregarEstudianteResponse_QNAME = new QName("http://Practica/", "agregar_estudianteResponse");
+    private final static QName _AgregarAutorResponse_QNAME = new QName("http://Practica/", "agregar_autorResponse");
+    private final static QName _AgregarAutor_QNAME = new QName("http://Practica/", "agregar_autor");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: practica
@@ -37,71 +39,105 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Suma }
+     * Create an instance of {@link AgregarEstudianteResponse }
      * 
      */
-    public Suma createSuma() {
-        return new Suma();
+    public AgregarEstudianteResponse createAgregarEstudianteResponse() {
+        return new AgregarEstudianteResponse();
     }
 
     /**
-     * Create an instance of {@link SumaResponse }
+     * Create an instance of {@link AgregarEstudiante }
      * 
      */
-    public SumaResponse createSumaResponse() {
-        return new SumaResponse();
+    public AgregarEstudiante createAgregarEstudiante() {
+        return new AgregarEstudiante();
     }
 
     /**
-     * Create an instance of {@link HelloResponse }
+     * Create an instance of {@link AgregarLibroResponse }
      * 
      */
-    public HelloResponse createHelloResponse() {
-        return new HelloResponse();
+    public AgregarLibroResponse createAgregarLibroResponse() {
+        return new AgregarLibroResponse();
     }
 
     /**
-     * Create an instance of {@link Hello }
+     * Create an instance of {@link AgregarLibro }
      * 
      */
-    public Hello createHello() {
-        return new Hello();
+    public AgregarLibro createAgregarLibro() {
+        return new AgregarLibro();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
+     * Create an instance of {@link AgregarAutor }
      * 
      */
-    @XmlElementDecl(namespace = "http://Practica/", name = "helloResponse")
-    public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
-        return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
+    public AgregarAutor createAgregarAutor() {
+        return new AgregarAutor();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Suma }{@code >}}
+     * Create an instance of {@link AgregarAutorResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://Practica/", name = "suma")
-    public JAXBElement<Suma> createSuma(Suma value) {
-        return new JAXBElement<Suma>(_Suma_QNAME, Suma.class, null, value);
+    public AgregarAutorResponse createAgregarAutorResponse() {
+        return new AgregarAutorResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SumaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarLibro }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://Practica/", name = "sumaResponse")
-    public JAXBElement<SumaResponse> createSumaResponse(SumaResponse value) {
-        return new JAXBElement<SumaResponse>(_SumaResponse_QNAME, SumaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://Practica/", name = "agregar_libro")
+    public JAXBElement<AgregarLibro> createAgregarLibro(AgregarLibro value) {
+        return new JAXBElement<AgregarLibro>(_AgregarLibro_QNAME, AgregarLibro.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarEstudiante }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://Practica/", name = "hello")
-    public JAXBElement<Hello> createHello(Hello value) {
-        return new JAXBElement<Hello>(_Hello_QNAME, Hello.class, null, value);
+    @XmlElementDecl(namespace = "http://Practica/", name = "agregar_estudiante")
+    public JAXBElement<AgregarEstudiante> createAgregarEstudiante(AgregarEstudiante value) {
+        return new JAXBElement<AgregarEstudiante>(_AgregarEstudiante_QNAME, AgregarEstudiante.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarLibroResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Practica/", name = "agregar_libroResponse")
+    public JAXBElement<AgregarLibroResponse> createAgregarLibroResponse(AgregarLibroResponse value) {
+        return new JAXBElement<AgregarLibroResponse>(_AgregarLibroResponse_QNAME, AgregarLibroResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarEstudianteResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Practica/", name = "agregar_estudianteResponse")
+    public JAXBElement<AgregarEstudianteResponse> createAgregarEstudianteResponse(AgregarEstudianteResponse value) {
+        return new JAXBElement<AgregarEstudianteResponse>(_AgregarEstudianteResponse_QNAME, AgregarEstudianteResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarAutorResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Practica/", name = "agregar_autorResponse")
+    public JAXBElement<AgregarAutorResponse> createAgregarAutorResponse(AgregarAutorResponse value) {
+        return new JAXBElement<AgregarAutorResponse>(_AgregarAutorResponse_QNAME, AgregarAutorResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarAutor }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Practica/", name = "agregar_autor")
+    public JAXBElement<AgregarAutor> createAgregarAutor(AgregarAutor value) {
+        return new JAXBElement<AgregarAutor>(_AgregarAutor_QNAME, AgregarAutor.class, null, value);
     }
 
 }

@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para helloResponse complex type.
+ * <p>Clase Java para agregar_autorResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="helloResponse">
+ * &lt;complexType name="agregar_autorResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "helloResponse", propOrder = {
+@XmlType(name = "agregar_autorResponse", propOrder = {
     "_return"
 })
-public class HelloResponse {
+public class AgregarAutorResponse {
 
     @XmlElement(name = "return")
     protected String _return;

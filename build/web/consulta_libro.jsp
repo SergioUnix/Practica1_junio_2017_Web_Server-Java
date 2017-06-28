@@ -1,12 +1,11 @@
 <%-- 
-    Document   : index
-    Created on : 22/06/2017, 05:05:27 PM
+    Document   : consulta_libro
+    Created on : 22/06/2017, 10:04:14 PM
     Author     : Ariel
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>  
-            
+<!DOCTYPE html>
 <html>
     <head>
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,18 +23,18 @@
 <div id="leftMain"> <a href="index.jsp"><img src="images/logo.gif" alt="School Website" border="0" /></a>
   <div id="navbar">
     <ul>
-    <li><a href="index.jsp">Inicio</a></li>
+      <li><a href="index.jsp">Inicio</a></li>
       <li><a href="agregar_libro.jsp">Agregar libro</a></li> 
       <li><a href="consulta_libro.jsp">Consulta Libro</a></li>
       <li><a href="agregar_autor.jsp">Agregar Autor</a></li>
-      <li><a href="pretamo.jsp">Realizar Un Prestamo</a></li>
-       <li><a href="agregar_estudiante.jsp">Agregar Estudiante</a></li>
+       <li><a href="pretamo.jsp">Realizar Un Prestamo</a></li>
+     <li><a href="agregar_estudiante.jsp">Agregar Estudiante</a></li>
       <li><a href="directions.html">Directions</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </div>
   <div id="navbarAlt">
-  
+   
   </div>
 </div>
 <div id="main">
@@ -50,15 +49,37 @@
 </p>
  
 <form id="form1" name="form1" method="post" action="">
+        <label>Nombre:<br />
+        <input type="text" name="nombre" value=""  id="name" />
         
+        </label>
         <p>
-         Bienvenido
+          <label>Numero de ejemplar:<br />
+        <input type="text" name="no_ejemplar" value="" id="email" />
+        
+        </label>
+        </p>
+        <p>
+          <label>Paginas:<br />
+        <input type="text" name="paginas" value="" />
+        
+        </label>
+        </p>
+      
+        <p>
+            
+          <input type="submit" name="grabar" value="Agregar" />
+          
         </p>
       </form>
   </div>
   
-  
  
 
+  
+  
+  
+
 </body>
+
 </html>

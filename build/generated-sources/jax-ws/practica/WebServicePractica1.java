@@ -26,32 +26,74 @@ public interface WebServicePractica1 {
 
     /**
      * 
-     * @param radio
+     * @param direccion
+     * @param dpi
+     * @param telefono
+     * @param nombre
      * @return
      *     returns java.lang.String
      */
-    @WebMethod
+    @WebMethod(operationName = "agregar_estudiante")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "suma", targetNamespace = "http://Practica/", className = "practica.Suma")
-    @ResponseWrapper(localName = "sumaResponse", targetNamespace = "http://Practica/", className = "practica.SumaResponse")
-    @Action(input = "http://Practica/WebService_Practica1/sumaRequest", output = "http://Practica/WebService_Practica1/sumaResponse")
-    public String suma(
-        @WebParam(name = "radio", targetNamespace = "")
-        int radio);
+    @RequestWrapper(localName = "agregar_estudiante", targetNamespace = "http://Practica/", className = "practica.AgregarEstudiante")
+    @ResponseWrapper(localName = "agregar_estudianteResponse", targetNamespace = "http://Practica/", className = "practica.AgregarEstudianteResponse")
+    @Action(input = "http://Practica/WebService_Practica1/agregar_estudianteRequest", output = "http://Practica/WebService_Practica1/agregar_estudianteResponse")
+    public String agregarEstudiante(
+        @WebParam(name = "Dpi", targetNamespace = "")
+        int dpi,
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "direccion", targetNamespace = "")
+        String direccion,
+        @WebParam(name = "telefono", targetNamespace = "")
+        int telefono);
 
     /**
      * 
-     * @param name
+     * @param codTipoAutor
+     * @param nombre
      * @return
      *     returns java.lang.String
      */
-    @WebMethod
+    @WebMethod(operationName = "agregar_autor")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://Practica/", className = "practica.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://Practica/", className = "practica.HelloResponse")
-    @Action(input = "http://Practica/WebService_Practica1/helloRequest", output = "http://Practica/WebService_Practica1/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "agregar_autor", targetNamespace = "http://Practica/", className = "practica.AgregarAutor")
+    @ResponseWrapper(localName = "agregar_autorResponse", targetNamespace = "http://Practica/", className = "practica.AgregarAutorResponse")
+    @Action(input = "http://Practica/WebService_Practica1/agregar_autorRequest", output = "http://Practica/WebService_Practica1/agregar_autorResponse")
+    public String agregarAutor(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "cod_tipo_autor", targetNamespace = "")
+        int codTipoAutor);
+
+    /**
+     * 
+     * @param paginas
+     * @param tema
+     * @param noEjemplar
+     * @param codAutor
+     * @param nombre
+     * @param codEstado
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "agregar_libro")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "agregar_libro", targetNamespace = "http://Practica/", className = "practica.AgregarLibro")
+    @ResponseWrapper(localName = "agregar_libroResponse", targetNamespace = "http://Practica/", className = "practica.AgregarLibroResponse")
+    @Action(input = "http://Practica/WebService_Practica1/agregar_libroRequest", output = "http://Practica/WebService_Practica1/agregar_libroResponse")
+    public String agregarLibro(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "no_ejemplar", targetNamespace = "")
+        int noEjemplar,
+        @WebParam(name = "paginas", targetNamespace = "")
+        int paginas,
+        @WebParam(name = "tema", targetNamespace = "")
+        String tema,
+        @WebParam(name = "cod_autor", targetNamespace = "")
+        int codAutor,
+        @WebParam(name = "cod_estado", targetNamespace = "")
+        int codEstado);
 
 }
